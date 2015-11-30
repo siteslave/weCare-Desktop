@@ -1,0 +1,23 @@
+{
+  "name": "weCare",
+  "description": "weCare",
+  "main": "main.js",
+  "authors": [
+    "Satit Rianpit"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "hdc",
+    "emr",
+    "his",
+    "nodejs"
+  ],
+  "homepage": "https://github.com/siteslave/weCare",
+  "moduleType": [],
+  "private": true,
+  "dependencies": {
+    "font-awesome": "~4.5.0",
+    "bootstrap": "4.0.0-alpha",
+    "tether": "~1.1.1"
+  }
+}

@@ -1,0 +1,99 @@
+extends ../layouts/main
+
+block scripts 
+  script(src="../js/typearea.js")
+
+block breadcrumb
+  ol.breadcrumb
+    li
+      a(href="./index.html")
+        i.fa.fa-home.fa-fw
+        | &nbsp;หน้าหลัก
+    li.active ตรวจสอบข้อมูลประชากร
+block content 
+  .card
+    .card-header
+      i.fa.fa-group
+      | &nbsp; รายชื่อประชากรกลุ่มเป้าหมายที่ซ้ำกับหน่วยบริการอื่น
+    .card-block(style="padding: 0px;")
+      table.table.table-hover.table-sm#tblList
+        thead
+          tr 
+            th #
+            th CID
+            th HN
+            th ชื่อ - สกุล
+            th วันเกิด
+            th อายุ
+            th Typearea
+            th 
+            
+        tbody
+          tr 
+            td(colspan="8") กรุณารอซักครู่...
+  //- 
+  //- nav 
+  //-   ul.pagination
+  //-     li 
+  //-       a(href="#", aria-label="Previous")
+  //-         span(aria-hidden="true") &laquo;
+  //-     li.active 
+  //-       a(href="#") 1
+  //-     li
+  //-       a(href="#") 2
+  //-     li
+  //-       a(href="#") 3
+  //-     li 
+  //-       a(href="#", aria-label="Next")
+  //-         span(aria-hidden="true") &raquo;
+
+  .modal.fade#mdlDuplicated
+    .modal-dialog.modal-lg
+      .modal-content
+        .modal-header
+          button(type="button", data-dismiss="modal", aria-label="Close").close
+            span(aria-hidden="true") &times;
+            
+          h4.modal-title 
+            i.fa.fa-group
+            | &nbsp; รายละเอียดความซ้ำซ้อน
+          
+        .modal-body
+          table.table.table-sm#tblDuplicatedResult
+            thead 
+              tr 
+                th #
+                th หน่วยบริการ
+                th ชื่อ - สกุล
+                th วันเกิด
+                th เพศ
+                th TYPEAREA
+                th ปรับปรุง
+                th จอง
+            tbody
+
+        .modal-footer 
+          button(type="button", data-dismiss="modal").btn.btn-default ปิดหน้าต่าง
+
+
+  .modal.fade#mdlChangeTypearea
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button(type="button", data-dismiss="modal", aria-label="Close").close
+            span(aria-hidden="true") &times;
+            
+          h4.modal-title 
+            i.glyphicon.glyphicon-user
+            | &nbsp; เปลี่ยน TYPEAREA (HOSxP)
+          
+        .modal-body
+          input(type="hidden", value="")#txtPatientCID
+          .row 
+            .col-md-12
+              label เลือก TYPEAREA
+              select.form-control#slTypearea
+
+        .modal-footer 
+          button(type="button").btn.btn-primary#saveTypeArea เปลี่ยน TYPEAREA
+          button(type="button", data-dismiss="modal").btn.btn-danger ปิดหน้าต่าง

@@ -1,0 +1,66 @@
+extends ../layouts/main
+
+block scripts 
+  script(src="../js/settings.js")
+
+block breadcrumb
+  ol.breadcrumb
+    li
+      a(href="./index.html")
+        i.glyphicon.glyphicon-home
+        | &nbsp;หน้าหลัก
+    li.active กำหนดค่าการเชื่อมต่อ
+block content 
+  .card(style="width: 680px;")
+    .card-header 
+      i.fa.fa-cogs 
+      | &nbsp; กำหนดค่าการเชื่อมต่อ
+      
+    .card-block
+      .form-horizontal
+        .row
+          .col-md-8
+            .form-group.row
+              label(for="txtHost").col-lg-3.form-control-label ที่อยู่ HOSxP
+              .col-lg-9
+                input(type="text", placeholder="localhost").form-control#txtHost
+          .col-md-4
+            .form-group.row
+              label(for="txtPort").col-lg-2.form-control-label พอร์ต
+              .col-lg-10
+                input(type="number", placeholder="3306").form-control#txtPort
+        .row
+          .col-md-12
+            .form-group.row
+              label(for="txtDatabase").col-lg-2.form-control-label ชื่อฐานข้อมูล
+              .col-lg-10
+                input(type="text", placeholder="hosxp_pcu").form-control#txtDatabase
+        .row
+          .col-md-6
+            .form-group.row
+              label(for="txtUser").col-lg-4.form-control-label ชื่อผู้ใช้งาน
+              .col-lg-8
+                input(type="text", placeholder="root").form-control#txtUser
+          .col-md-6
+            .form-group.row
+              label(for="txtPassword").col-lg-4.form-control-label รหัสผ่าน
+              .col-lg-8
+                input(type="password", placeholder="******").form-control#txtPassword
+        .row
+          .col-md-12
+            .form-group.row
+              label(for="txtCloudUrl").col-lg-2.form-control-label Clud URL
+              .col-lg-10
+                input(type="text", placeholder="http://localhost:3000").form-control#txtCloudURL
+        .row
+          .col-md-12
+            .form-group.row
+              label(for="txtCloudKey").col-lg-2.form-control-label Key
+              .col-lg-10
+                input(type="password", placeholder="******").form-control#txtCloudKey
+                
+        .btn-group
+          button.btn.btn-primary(type="button")#btnSave
+            i.fa.fa-save
+            | &nbsp; บันทึก
+            

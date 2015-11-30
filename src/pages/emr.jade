@@ -1,0 +1,98 @@
+extends ../layouts/main
+
+block scripts 
+  script(src="../js/emr.js")
+
+block breadcrumb
+  ol.breadcrumb
+    li
+      a(href="./index.html")
+        i.glyphicon.glyphicon-home
+        | &nbsp;หน้าหลัก
+    li.active ประวัติรับบริการ
+block content 
+  div#alert1.alert.alert-danger(role="alert", style="display: none;")
+    p#msg
+      
+  .card 
+    .card-block(style="padding: 5px; background-color: #eceeef;")
+      .row
+        .col-md-5
+          .input-group
+            input(type="text", placeholder="ระบุเลขบัตรประชาชน...").form-control
+            span.input-group-btn
+              button.btn.btn-primary(type="button")#btnSearch 
+                i.fa.fa-search
+                | &nbsp; แสดง
+              button.btn.btn-primary-outline(type="button")#btnSelectedPerson
+                i.fa.fa-users
+  .row#info1
+    .col-md-4
+      .list-group#lstService2
+        a(href="#").list-group-item.active
+          i.fa.fa-desktop.fa-fw
+          | &nbsp; ประวัติรับบริการ
+        a(href="#").list-group-item
+            h5.list-group-item-heading 21/10/2558 11:43:44 น.
+            p.list-group-item-text [04958] รพ.สต.นาสีนวน บ้านหนองอุ่ม
+        a(href="#").list-group-item
+            h5.list-group-item-heading 21/10/2558 21:10:25 น.
+            p.list-group-item-text [04965] รพ.สต.ขามเรียง บ้านขามเรียง
+    .col-md-8
+      .card
+        .card-header
+          i.fa.fa-user
+          | &nbsp; ข้อมูลทั่วไป (ฐานข้อมูลของหน่วยบริการ)
+          
+        .card-block
+          | xxxx
+      .card
+        .card-header
+          i.fa.fa-cloud
+          | &nbsp; รายละเอียดการรับบริการ (CLUD)
+          
+        .card-block
+          | xxxx
+      .card
+        .card-header
+          i.fa.fa-cloud
+          | &nbsp; รายละเอียดการให้บริการ (CLOUD)
+          
+        .card-block(style="padding: 5px;")
+          ul.nav.nav-tabs(role="tablist")#tabs
+            li.nav-item
+              a.nav-link.active(href="#diag", role="tab", data-toggle="tab") 
+                i.fa.fa-get-pocket 
+                | &nbsp; การวินิจฉัย
+            li.nav-item
+              a.nav-link(href="#procedure", role="tab", data-toggle="tab") 
+                i.fa.fa-suitcase
+                | &nbsp; หัตถการ
+            li.nav-item
+              a.nav-link(href="#medical", role="tab", data-toggle="tab")
+                i.fa.fa-shopping-bag
+                | &nbsp; ยาและเวชภัณฑ์
+            li.nav-item
+              a.nav-link(href="#charge", role="tab", data-toggle="tab") 
+                i.fa.fa-shopping-cart
+                | &nbsp; ค่าใช้จ่าย
+            li.nav-item
+              a.nav-link(href="#lab", role="tab", data-toggle="tab") 
+                i.fa.fa-eyedropper
+                | &nbsp; ผล LAB
+          .tab-content
+            .tab-pane(role="tabpanel").active#diag
+              table.table.table-striped
+                thead 
+                  tr 
+                    th รหัส
+                    th รายการ
+                    th ประเภท
+                tbody 
+                  tr 
+                    td(colspan="3") ...
+            .tab-pane(role="tabpanel")#procedure procedure
+            .tab-pane(role="tabpanel")#medical medical
+            .tab-pane(role="tabpanel")#charge charge
+            .tab-pane(role="tabpanel")#lab LAB
+              

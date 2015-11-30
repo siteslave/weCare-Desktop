@@ -1,0 +1,43 @@
+extends ../layouts/main
+
+block scripts 
+  script(src="../js/main.js")
+
+block breadcrumb
+  ol.breadcrumb
+    li
+      a(href="./index.html")
+        i.glyphicon.glyphicon-home
+        | &nbsp;หน้าหลัก
+    li.active ยินดีต้อนรับ
+block content 
+  .card
+    .card-block(style="padding: 5px; background-color: #eceeef;")
+      .form-inline
+        label วันที่รับบริการ &nbsp;
+        input(type="date").form-control#txtDate
+        | &nbsp;
+        button(type="button").btn.btn-primary#btnSearchService
+          i.fa.fa-search
+          | &nbsp; แสดง
+  div(style="padding-top: 10px;")    
+  .card
+    .card-header
+      i.fa.fa-search
+      | &nbsp; รายชื่อผู้มารับบริการ
+    .card-block(style="padding: 0px;")
+      table.table.table-striped.table-sm#tblList
+        thead
+          tr 
+            th #
+            th HN
+            th ชื่อ - สกุล
+            th อายุ(ปี)
+            th การวินิจฉัย
+            th สิทธิ์การรักษา
+            th 
+            
+        tbody
+          tr 
+            td(colspan="7") กรุณารอซักครู่...
+      

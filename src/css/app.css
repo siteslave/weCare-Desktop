@@ -1,0 +1,9 @@
+body {
+  padding-top: 50px;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+input[type="date"].form-control {
+  line-height: 1.25rem;
+}

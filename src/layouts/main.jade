@@ -1,0 +1,61 @@
+doctype
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title weCare : Online Patient EMR System
+    link(href="../../vendor/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+    link(href="../../node_modules/nprogress/nprogress.css", rel="stylesheet")
+    link(href="../../vendor/font-awesome/css/font-awesome.min.css", rel="stylesheet")
+    link(href="../css/app.css" rel="stylesheet")
+
+    script(src="../app.js")
+      
+    script(src="../../vendor/bootstrap/dist/js/bootstrap.min.js")
+    script(src="../../node_modules/nprogress/nprogress.js")     
+     
+    block scripts  
+      
+body
+  nav.navbar.navbar-dark.bg-primary.navbar-fixed-top
+    a.navbar-brand(href="./index.html")
+      i.fa.fa-windows.fa-fw
+      | &nbsp; weCare
+
+    ul.nav.navbar-nav.pull-right
+      //- li.nav-item
+      //-   a(href="./typearea.html").nav-link
+      //-     i.fa.fa-group.fa-fw
+      //-     | &nbsp; ตรวจสอบประชากร
+      //- li.nav-item
+      //-   a(href="./settings.html").nav-link
+      //-     i.fa.fa-cogs
+      //-     | &nbsp; ตั้งค่า
+      //-     
+      li.nav-item.dropdown
+        a.nav-link.dropdown-toggle(data-toggle="dropdown", href="#", 
+        role="button", aria-haspopup="true", aria-expanded="false") 
+          i.fa.fa-th.fa-fw
+          | MENU
+        div.dropdown-menu.dropdown-menu-right(aria-labelledby="Menu")
+          .dropdown-header เมนูการใช้งาน (MAIN MENU)
+          a.dropdown-item(href="./index.html")
+            i.fa.fa-home.fa-fw
+            | &nbsp; หน้าหลัก (Main Page)
+          a.dropdown-item(href="./emr.html")
+            i.fa.fa-search.fa-fw
+            | &nbsp; ประวัติรับบริการ (Patient EMR)
+          a.dropdown-item(href="./typearea.html")
+            i.fa.fa-group.fa-fw
+            | &nbsp; ตรวจสอบความซ้ำซ้อนประชากร
+          a.dropdown-item(href="./drugallergy.html")
+            i.fa.fa-exclamation-triangle.fa-fw
+            | &nbsp; ตรวจสอบการแพ้ยา (Drug Allergy)
+          .dropdown-divider
+          a.dropdown-item(href="./upload.html")
+            i.fa.fa-cloud-upload.fa-fw
+            | &nbsp; ส่งข้อมูล 43 แฟ้ม (Upload)
+  .container
+    block breadcrumb
+      
+    block content
